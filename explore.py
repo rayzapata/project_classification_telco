@@ -38,6 +38,7 @@ cols = [
     # payment information
     'payment_type',
     'paperless_billing',
+    'autopay',
 
     # subscription information
     'contract_type',
@@ -46,22 +47,14 @@ cols = [
 
 ]
 
-
-def base_explore(cache=False):
+def encode(df):
     '''
 
-    Create a basic  DataFrame that holds all data before for exploration
-    purposes
+    Set yes/no columns to hold boolean values
 
-    cache=False default behavior, set to true to force write new CSV file
+    Used in conjunction with explore_df function
 
     '''
-
-    # read in data to DataFrame
-    df = get_data(cache=cache)
-
-    # fill missing values in total_charges
-    df = impute_mean(df)
 
     # assign boolean values to yes/no columns
     df['has_partner'] = np.where(df.partner == 'Yes', 1, 0)
@@ -73,11 +66,24 @@ def base_explore(cache=False):
     df['device_protection'] = np.where(df.device_protection == 'Yes', 1, 0)
     df['tech_support'] = np.where(df.tech_support == 'Yes', 1, 0)
     df['paperless_billing'] = np.where(df.paperless_billing == 1, 0, 1)
+    df['autopay'] = np.where(df.payment_type.str.contains('auto') == True, 1, 0)
     df['churn'] = np.where(df.churn == 'Yes', 1, 0)
+
+    return df
+
+
+def rename_cols(df):
+    '''
+
+    Rename columns for appropriate data context and clarity of data
+    contained in columns
+
+    Used in conjunction with explore_df function
+
+    '''
 
     # rename columns to match data context
     df = df.rename(columns={'senior_citizen':'is_senior',
-        'partner':'has_partner', 'dependents':'has_dependent',
         'multiple_lines':'phone_service_type'})
 
     # rename values for service types for clarity
@@ -87,8 +93,37 @@ def base_explore(cache=False):
     df['internet_service_type'] = df.internet_service_type.replace(
         ['Fiber optic'], ['Fiber'])
 
-    # drop unneccesary columns
-    df = df[cols]
+    return df
+
+
+
+def explore_df(columns=cols, cache=False):
+    '''
+
+    Create a basic DataFrame for purposes of exploration
+
+    columns=cols default behavior, pass list of columns to specify only
+    certain columns, otherwise all columns are retained
+
+    cache=False default behavior, set true to force write new CSV
+    file, otherwise cached version is used
+
+    '''
+
+    # read in data to DataFrame
+    df = get_data(cache=cache)
+
+    # fill missing values in total_charges
+    df = impute_mean(df)
+
+    # set boolean values for true/false columns
+    df = encode(df)
+
+    # rename columns
+    df = rename_cols(df)
+
+    # set desired or default DataFrame columns
+    df = df[columns]
 
     return df
 
