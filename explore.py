@@ -13,22 +13,33 @@ from prepare import impute_mean
 # set list of columns for base DataFrame with all data
 cols = [
 
+    # customer demographics
     'gender',
     'is_senior',
     'has_partner',
     'has_dependent',
+
+    # service types
     'phone_service_type',
     'internet_service_type',
+
+    # internet options
     'streaming_tv',
     'streaming_movies',
     'online_security',
     'online_backup',
     'device_protection',
     'tech_support',
+
+    # service charges
     'monthly_charges',
     'total_charges',
+
+    # payment information
     'payment_type',
     'paperless_billing',
+
+    # subscription information
     'contract_type',
     'tenure',
     'churn'

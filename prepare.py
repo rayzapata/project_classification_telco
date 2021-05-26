@@ -15,7 +15,7 @@ from acquire import get_data
 # set list of columns for base DataFrame with all data
 cols = [
 
-    # customer info and demos
+    # customer demographics
     'is_female',
     'is_senior',
     'has_partner',
@@ -29,11 +29,9 @@ cols = [
     'has_internet',
     'fiber',
 
-    # internet media options
+    # internet options
     'streaming_tv',
     'streaming_movies',
-    
-    # internet service options
     'online_security',
     'online_backup',
     'device_protection',
@@ -43,17 +41,15 @@ cols = [
     'monthly_charges',
     'total_charges',
 
-    # payment types
+    # payment information
     'electronic_check',
     'bank_transfer',
     'credit_card',
     'paperless_billing',
 
-    # contract status
+    # subscription information
     'one_year_contract',
     'two_year_contract',
-
-    # service length and status
     'tenure',
     'churn'
 ]
@@ -73,7 +69,7 @@ def encode(df):
     df['has_partner'] = np.where(df.partner == 'Yes', 1, 0)
     df['has_dependent'] = np.where(df.dependents == 'Yes', 1, 0)
 
-    df['has_phone'] = np.where(df.phone_service == 'No', 1, 0)
+    df['has_phone'] = np.where(df.phone_service == 'Yes', 1, 0)
     df['multiple_lines'] = np.where(df.multiple_lines == 'Yes', 1, 0)
 
     df['has_internet'] = np.where(df.internet_service_type_id == 3, 0, 1)
