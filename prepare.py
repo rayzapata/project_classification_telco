@@ -197,4 +197,3 @@ def prep_df(columns=cols, cache=False):
     y_train, y_validate, y_test = separate_y(train, validate, test)
 
     return X_train, y_train, X_validate, y_validate, X_test, y_test
-

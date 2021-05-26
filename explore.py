@@ -47,6 +47,7 @@ cols = [
 
 ]
 
+
 def encode(df):
     '''
 
@@ -96,7 +97,6 @@ def rename_cols(df):
     return df
 
 
-
 def explore_df(columns=cols, cache=False):
     '''
 
@@ -112,19 +112,13 @@ def explore_df(columns=cols, cache=False):
 
     # read in data to DataFrame
     df = get_data(cache=cache)
-
     # fill missing values in total_charges
     df = impute_mean(df)
-
     # set boolean values for true/false columns
     df = encode(df)
-
     # rename columns
     df = rename_cols(df)
-
     # set desired or default DataFrame columns
     df = df[columns]
 
     return df
-
-
