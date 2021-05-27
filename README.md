@@ -5,22 +5,22 @@
 
 ### Table of Conents
 
-I       [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)<br>
-II      [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)<br>
-III     [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)<br>
-IV      [ Process ](https://github.com/ray-zapata/project_classification_telco#iv-process)
-- 1     [ Project Planning ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
-- 2     [ Data Acquisition ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
-- 3     [ Data Preparation ](https://github.com/ray-zapata/project_classification_telco#3-data-preparation)
-- 4     [ Data Exploration ](https://github.com/ray-zapata/project_classification_telco#4-data-exploration)
-- 5     [ Modeling & Evaluation ](https://github.com/ray-zapata/project_classification_telco#5-modeling--evaluation)
-- 6     [ Product Delivery ](https://github.com/ray-zapata/project_classification_telco#6-product-delivery)
+- I       [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)<br>
+- II      [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)<br>
+- III     [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)<br>
+- IV      [ Process ](https://github.com/ray-zapata/project_classification_telco#iv-process)
+  - 1     [ Project Planning ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
+  - 2     [ Data Acquisition ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
+  - 3     [ Data Preparation ](https://github.com/ray-zapata/project_classification_telco#3-data-preparation)
+  - 4     [ Data Exploration ](https://github.com/ray-zapata/project_classification_telco#4-data-exploration)
+  - 5     [ Modeling & Evaluation ](https://github.com/ray-zapata/project_classification_telco#5-modeling--evaluation)
+  - 6     [ Product Delivery ](https://github.com/ray-zapata/project_classification_telco#6-product-delivery)
 
-V       [ Project Reproduction ](https://github.com/ray-zapata/project_classification_telco#v-project-reproduction)
+- V       [ Project Reproduction ](https://github.com/ray-zapata/project_classification_telco#v-project-reproduction)
 
 ### I. Project Goals
 
-This project holds the intent of predicting and reducing churn at Telco Inc., a telecommunications company provides telephony and internet services to members of the consumer class. Churn in this context refers to the act of customer services and subscriptions being terminated, also known as attrition or turnover. Our goal is to find drivers of churn in the existing data and use machine learning models to predict further incidence in test samples.
+This project holds the intent of predicting and reducing churn at Telco Inc., a telecommunication company provides telephony and internet services to members of the consumer class. Churn in this context refers to the act of customer services and subscriptions being terminated, also known as attrition or turnover. Our goal is to find drivers of churn in the existing data and use machine learning models to predict further incidence in test samples.
 
 ### II. Project Deliverables
 
