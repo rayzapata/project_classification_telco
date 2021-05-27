@@ -5,9 +5,9 @@
 
 ### Table of Conents
 
-- I       [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)<br>
-- II      [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)<br>
-- III     [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)<br>
+- I       [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)
+- II      [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)
+- III     [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)
 - IV      [ Process ](https://github.com/ray-zapata/project_classification_telco#iv-process)
   - 1     [ Project Planning ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
   - 2     [ Data Acquisition ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
