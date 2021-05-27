@@ -5,17 +5,17 @@
 
 ### Table of Conents
 
-- i     [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)
-- ii    [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)
-- iii   [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)
-- Process
-  - iv, 1 [ Project Planning ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
-  - iv, 2 [ Data Acquisition ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
-  - iv, 3 [ Data Preparation ](https://github.com/ray-zapata/project_classification_telco#3-data-preparation)
-  - iv, 4 [ Data Exploration ](https://github.com/ray-zapata/project_classification_telco#4-data-exploration)
-  - iv, 5 [ Modeling & Evaluation ](https://github.com/ray-zapata/project_classification_telco#5-modeling--evaluation)
-  - iv, 6 [ Product Delivery ](https://github.com/ray-zapata/project_classification_telco#6-product-delivery)
-- v     [ Project Reproduction ](https://github.com/ray-zapata/project_classification_telco#v-project-reproduction)
+- i       [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)
+- ii      [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)
+- iii     [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)
+- iv      [ Process ](https://github.com/ray-zapata/project_classification_telco#iv-process)
+  - 1     [ Project Planning ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
+  - 2     [ Data Acquisition ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
+  - 3     [ Data Preparation ](https://github.com/ray-zapata/project_classification_telco#3-data-preparation)
+  - 4     [ Data Exploration ](https://github.com/ray-zapata/project_classification_telco#4-data-exploration)
+  - 5     [ Modeling & Evaluation ](https://github.com/ray-zapata/project_classification_telco#5-modeling--evaluation)
+  - 6     [ Product Delivery ](https://github.com/ray-zapata/project_classification_telco#6-product-delivery)
+- v       [ Project Reproduction ](https://github.com/ray-zapata/project_classification_telco#v-project-reproduction)
 
 ### i. Project Goals
 
