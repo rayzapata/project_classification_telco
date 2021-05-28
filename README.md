@@ -4,18 +4,21 @@
 ## Customer Churn at Telco Inc.
 
 ### Table of Conents
+---
 
-  1.   [ Project Goals         ](#i-project-goals)
-  2.  [ Project Deliverables  ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)
-  3. [ Data Dictionary       ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)
-  4.  [ Process               ](https://github.com/ray-zapata/project_classification_telco#iv-process)
-    1.   [ Project Planning      ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
-    2.   [ Data Acquisition      ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
-    3.   [ Data Preparation      ](https://github.com/ray-zapata/project_classification_telco#3-data-preparation)
-    4.   [ Data Exploration      ](https://github.com/ray-zapata/project_classification_telco#4-data-exploration)
-    5.   [ Modeling & Evaluation ](https://github.com/ray-zapata/project_classification_telco#5-modeling--evaluation)
-    6.   [ Product Delivery      ](https://github.com/ray-zapata/project_classification_telco#6-product-delivery)
-  5.   [ Project Reproduction  ](https://github.com/ray-zapata/project_classification_telco#v-project-reproduction)
+I.   [ Project Goals         ](#i-project-goals)<br>
+II.  [ Project Deliverables  ](#ii-project-deliverables)<br>
+III. [ Data Dictionary       ](#iii-data-dictionary)<br>
+IV.  [ Process               ](#iv-process)
+
+  1. [ Project Planning      ](#1-project-planning)
+  2. [ Data Acquisition      ](#2-data-acquisition)
+  3. [ Data Preparation      ](#3-data-preparation)
+  4. [ Data Exploration      ](#4-data-exploration)
+  5. [ Modeling & Evaluation ](#5-modeling--evaluation)
+  6. [ Product Delivery      ](#6-product-delivery)
+
+V.   [ Project Reproduction  ](#v-project-reproduction)
 
 ### I. Project Goals
 
