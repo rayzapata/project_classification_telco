@@ -1,10 +1,10 @@
 # Classification Project
 
-
 ## Customer Churn at Telco Inc.
 
-### Table of Conents
 ---
+
+### Table of Conents
 
 I.   [ Project Goals         ](#i-project-goals)<br>
 II.  [ Project Deliverables  ](#ii-project-deliverables)<br>
@@ -19,6 +19,8 @@ IV.  [ Process               ](#iv-process)
   6. [ Product Delivery      ](#6-product-delivery)
 
 V.   [ Project Reproduction  ](#v-project-reproduction)
+
+---
 
 ### I. Project Goals
 
