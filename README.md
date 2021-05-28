@@ -1,8 +1,7 @@
 # Classification Project
 
-## Customer Churn at Telco Inc.
-
----
+Customer Churn at Telco Inc.
+===
 
 ### Table of Conents
 
@@ -45,7 +44,7 @@ WIP
 ### IV. Process
 
 ##### 1. Project Planning
-**Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
+***Plan*** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
 - [x] Describe project goals and product
 - [ ] Set task list for working through pipeline
@@ -53,27 +52,27 @@ WIP
 - [ ] State clearly the starting hypothesis
 
 ##### 2. Data Acquisition
-Plan ➜ **Acquire** ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver <br>
+Plan ➜ ***Acquire*** ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver <br>
 
 WIP
 
 ##### 3. Data Preparation
-Plan ➜ Acquire ➜ **Prepare** ➜ Explore ➜ Model & Evaluate ➜ Deliver
+Plan ➜ Acquire ➜ ***Prepare*** ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
 WIP
 
 ##### 4. Data Exploration
-Plan ➜ Acquire ➜ Prepare ➜ **Explore** ➜ Model & Evaluate ➜ Deliver
+Plan ➜ Acquire ➜ Prepare ➜ ***Explore*** ➜ Model & Evaluate ➜ Deliver
 
 WIP
 
 ##### 5. Modeling & Evaluation
-Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ **Model & Evaluate** ➜ Deliver
+Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ ***Model & Evaluate*** ➜ Deliver
 
 WIP
 
 ##### 6. Product Delivery
-Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ **Deliver**
+Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ ***Deliver***
 
 WIP
 
