@@ -41,12 +41,10 @@ WIP
 
 ## IV. Process
 
-Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
-
-This section serves as step-by-step project documentation of the data science pipeline shown above- from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with Section V of this README; however, it does not serve to limit the process to strict definitions.
+This section serves as step-by-step project documentation of the data science pipeline- from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with Section V of this README; however, it does not serve to limit the process to strict definitions.
 
 #### 1. Project Planning
-🟢***Plan***🟢 ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
+🟢 **Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
 - [ ] Describe project goals and product
 - [ ] Set task list for working through pipeline
@@ -54,7 +52,7 @@ This section serves as step-by-step project documentation of the data science pi
 - [ ] State clearly the starting hypothesis
 
 #### 2. Data Acquisition
-Plan ➜ 🟢***Acquire***🟢 ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver <br>
+Plan ➜ 🟢 **Acquire** ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver <br>
 
 - [ ] Create `acquire.py` with:
   - Function(s) needed to fetch data into pandas DataFrame
@@ -66,7 +64,7 @@ Plan ➜ 🟢***Acquire***🟢 ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 
   - Plot variable distributions
 
 #### 3. Data Preparation
-Plan ➜ Acquire ➜ 🟢***Prepare***🟢 ➜ Explore ➜ Model & Evaluate ➜ Deliver
+Plan ➜ Acquire ➜ 🟢 **Prepare** ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
 - [ ] Create `prepare.py` with function(s) to:
   - Split data into train, validate, test sets
@@ -80,7 +78,7 @@ Plan ➜ Acquire ➜ 🟢***Prepare***🟢 ➜ Explore ➜ Model & Evaluate ➜ 
   - Create new features for use in modeling
 
 #### 4. Data Exploration
-Plan ➜ Acquire ➜ Prepare ➜ 🟢***Explore***🟢 ➜ Model & Evaluate ➜ Deliver
+Plan ➜ Acquire ➜ Prepare ➜ 🟢 **Explore** ➜ Model & Evaluate ➜ Deliver
 
 In Jupyter Notebook:
 - [ ] Answer key questions about hypotheses and find drivers of churn
@@ -94,7 +92,7 @@ In Jupyter Notebook:
 
 
 #### 5. Modeling & Evaluation
-Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ 🟢***Model & Evaluate***🟢 ➜ Deliver
+Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ 🟢 **Model & Evaluate** ➜ Deliver
 
 In Jupyter Notebook:
 - [ ] Establish baseline accuracy
@@ -108,7 +106,7 @@ In Jupyter Notebook:
   - Interpret and document findings
 
 #### 6. Product Delivery
-Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢***Deliver***🟢
+Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver**
 
 - [ ] Prepare five minute presentation using Jupyter Notebook
 - [ ] Include introduction of project and goals
