@@ -4,7 +4,18 @@
 ## Customer Churn at Telco Inc.
 
 ### Table of Conents
-[TOC]
+
+- I       [ Project Goals ](https://github.com/ray-zapata/project_classification_telco#i-project-goals)
+- II      [ Project Deliverables ](https://github.com/ray-zapata/project_classification_telco#ii-project-deliverables)
+- III     [ Data Dictionary ](https://github.com/ray-zapata/project_classification_telco#iii-data-dictionary)
+- IV      [ Process ](https://github.com/ray-zapata/project_classification_telco#iv-process)
+  - 1     [ Project Planning ](https://github.com/ray-zapata/project_classification_telco#1-project-planning)
+  - 2     [ Data Acquisition ](https://github.com/ray-zapata/project_classification_telco#2-data-acquisition)
+  - 3     [ Data Preparation ](https://github.com/ray-zapata/project_classification_telco#3-data-preparation)
+  - 4     [ Data Exploration ](https://github.com/ray-zapata/project_classification_telco#4-data-exploration)
+  - 5     [ Modeling & Evaluation ](https://github.com/ray-zapata/project_classification_telco#5-modeling--evaluation)
+  - 6     [ Product Delivery ](https://github.com/ray-zapata/project_classification_telco#6-product-delivery)
+- V       [ Project Reproduction ](https://github.com/ray-zapata/project_classification_telco#v-project-reproduction)
 
 ### I. Project Goals
 
