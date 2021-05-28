@@ -41,6 +41,10 @@ WIP
 
 ## IV. Process
 
+Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
+
+This section serves as step-by-step project documentation of the data science pipeline shown above- from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with Section V of this README; however, it does not serve to limit the process to strict definitions.
+
 #### 1. Project Planning
 🟢***Plan***🟢 ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
