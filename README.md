@@ -2,27 +2,28 @@
 Customer Churn at Telco Inc.
 ===
 
-### Table of Conents
+## Table of Conents
 
 I.   [ Project Goals         ](#i-project-goals)<br>
 II.  [ Project Deliverables  ](#ii-project-deliverables)<br>
 III. [ Data Dictionary       ](#iii-data-dictionary)<br>
 IV.  [ Process               ](#iv-process)
-  1. [ Project Planning      ](#1-project-planning)
-  2. [ Data Acquisition      ](#2-data-acquisition)
-  3. [ Data Preparation      ](#3-data-preparation)
-  4. [ Data Exploration      ](#4-data-exploration)
-  5. [ Modeling & Evaluation ](#5-modeling--evaluation)
-  6. [ Product Delivery      ](#6-product-delivery)
+1. [ Project Planning      ](#1-project-planning)
+2. [ Data Acquisition      ](#2-data-acquisition)
+3. [ Data Preparation      ](#3-data-preparation)
+4. [ Data Exploration      ](#4-data-exploration)
+5. [ Modeling & Evaluation ](#5-modeling--evaluation)
+6. [ Product Delivery      ](#6-product-delivery)
 V.   [ Project Reproduction  ](#v-project-reproduction)
+
 
 ---
 
-### I. Project Goals
+## I. Project Goals
 
 This project holds the intent of predicting and reducing churn at Telco Inc., a telecommunication company provides telephony and internet services to members of the consumer class. Churn in this context refers to the act of customer services and subscriptions being terminated, also known as attrition or turnover. Our goal is to find drivers of churn in the existing data and use machine learning models to predict further incidence in test samples.
 
-### II. Project Deliverables
+## II. Project Deliverables
 
 - Jupyter Notebook Report which contains the process of exploring, modeling, and testing
 - This README which contains:
@@ -34,13 +35,13 @@ This project holds the intent of predicting and reducing churn at Telco Inc., a 
 - Modules as `.py` files containing functions to acquire and prepare data
 - Jupyter Notebook Presentation with high-level overview of project
 
-### III. Data Dictionary
+## III. Data Dictionary
 
 WIP
 
-### IV. Process
+## IV. Process
 
-##### 1. Project Planning
+#### 1. Project Planning
 ***Plan*** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
 - [ ] Describe project goals and product
@@ -48,7 +49,7 @@ WIP
 - [ ] Create data dictionary to explain data and context
 - [ ] State clearly the starting hypothesis
 
-##### 2. Data Acquisition
+#### 2. Data Acquisition
 Plan ➜ ***Acquire*** ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver <br>
 
 - [ ] Create `acquire.py` with:
@@ -60,7 +61,7 @@ Plan ➜ ***Acquire*** ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver 
   - Perform data summarization
   - Plot variable distributions
 
-##### 3. Data Preparation
+#### 3. Data Preparation
 Plan ➜ Acquire ➜ ***Prepare*** ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
 - [ ] Create `prepare.py` with function(s) to:
@@ -74,7 +75,7 @@ Plan ➜ Acquire ➜ ***Prepare*** ➜ Explore ➜ Model & Evaluate ➜ Deliver
   - Explore dtypes and values to ensure numeric representation
   - Create new features for use in modeling
 
-##### 4. Data Exploration
+#### 4. Data Exploration
 Plan ➜ Acquire ➜ Prepare ➜ ***Explore*** ➜ Model & Evaluate ➜ Deliver
 
 In Jupyter Notebook:
@@ -88,7 +89,7 @@ In Jupyter Notebook:
   - Explain plan of action as deduced from work to this point
 
 
-##### 5. Modeling & Evaluation
+#### 5. Modeling & Evaluation
 Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ ***Model & Evaluate*** ➜ Deliver
 
 In Jupyter Notebook:
@@ -102,7 +103,7 @@ In Jupyter Notebook:
   - Summarize performance
   - Interpret and document findings
 
-##### 6. Product Delivery
+#### 6. Product Delivery
 Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ ***Deliver***
 
 - [ ] Prepare five minute presentation using Jupyter Notebook
@@ -115,6 +116,6 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ ***Deliver***
 - [ ] Provide final takeaways, recommend course of action, and next steps
 - [ ] Be prepared to answer questions following presentation
 
-### V. Project Reproduction
+## V. Project Reproduction
 
 WIP
