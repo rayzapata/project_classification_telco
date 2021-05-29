@@ -79,7 +79,7 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 |  monthly_charges       |  current monthly charges in USD            |  float                 |
 |  total_charges         |  sum of all charges for tenure in USD      |  float                 |
 |  tenure                |  length of customer service in months      |  integer               |
-|  churn (target)        |  customer service is terminated            |  integer (boolean)     |
+|  churn (target)        |  customer services are terminated          |  integer (boolean)     |
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Feature was only used in exploration DataFrames
 
