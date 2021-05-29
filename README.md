@@ -4,27 +4,32 @@ Customer Churn at Telco Inc.
 
 ## Table of Conents
 
-&nbsp;&nbsp;                         I.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Project Goals            ](#i-project-goals)<br>
-&nbsp;&nbsp;                         II.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      [Project Deliverables     ](#ii-project-deliverables)<br>
-&nbsp;&nbsp;                         III.&nbsp;&nbsp;&nbsp;&nbsp;           [Data Context             ](#iii-data-context)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.&nbsp;                               [Database Relationship Map](#1-database-relationship)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.&nbsp;                               [Data Dictionary          ](#2-data-dictionary)<br>
-&nbsp;&nbsp;                         IV.&nbsp;&nbsp;&nbsp;&nbsp;            [Process                  ](#iv-process)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.&nbsp;                               [Project Planning         ](#1-project-planning)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.&nbsp;                               [Data Acquisition         ](#2-data-acquisition)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.&nbsp;                               [Data Preparation         ](#3-data-preparation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.&nbsp;                               [Data Exploration         ](#4-data-exploration)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.&nbsp;                               [Modeling & Evaluation    ](#5-modeling--evaluation)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.&nbsp;                               [Product Delivery         ](#6-product-delivery)<br>
-&nbsp;&nbsp;                         V.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       [Project Reproduction     ](#v-project-reproduction)<br>
+* [I. Project Overview](#1-project-overview)<br>
+[1. Goals](#1-goals)<br>
+[2. Deliverables](#2-deliverables)<br>
+[3. Summary](#3-summary)<br>
+- II. [Data Context](#ii-data-context)<br>
+[1. Database Relationship Map](#1-database-relationship)<br>
+[2. Data Dictionary](#2-data-dictionary)<br>
+* III. [Process](#iii-process)<br>
+[1. Project Planning](#1-project-planning)<br>
+[2. Data Acquisition](#2-data-acquisition)<br>
+[3. Data Preparation](#3-data-preparation)<br>
+[4. Data Exploration](#4-data-exploration)<br>
+[5. Modeling & Evaluation](#5-modeling--evaluation)<br>
+[6. Product Delivery](#6-product-delivery)<br>
+- IV. [Modules](#iv-modules-)<br>
+* V. [Project Reproduction](#v-project-reproduction)<br>
 
 ---
 
-## I. Project Goals
+## I. Project Overview
+
+#### 1. Goals
 
 This project holds the intent of predicting and reducing churn at Telco Inc., a telecommunication company that provides telephony and internet services to members of the consumer class. Churn in this context refers to the act of customer services and subscriptions being terminated, also known as attrition or turnover. Our goal is to find drivers of churn in the existing data and use machine learning models to predict further incidence in test samples. From there we will recommend actions to improve customer retention in these areas of high churn.
 
-## II. Project Deliverables
+#### 2. Deliverables
 
 - Jupyter Notebook Report which contains the process of exploring, modeling, and testing
 - This README which contains:
@@ -36,8 +41,11 @@ This project holds the intent of predicting and reducing churn at Telco Inc., a 
 - Modules as `.py` files containing functions to acquire and prepare data
 - Jupyter Notebook Presentation with high-level overview of project
 
-## III. Data Context
+#### 3. Summary
 
+WIP
+
+## III. Data Context
 
 #### 1. Database Relationship
 
@@ -67,7 +75,7 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 |  online_backup         |  internet option: has or had service addon |  integer (boolean)     |
 |  device_protection     |  internet option: has or had service addon |  integer (boolean)     |
 |  tech_support          |  internet option: has or had service addon |  integer (boolean)     |
-|  mailed_check          |  payment type is or was check via post     |  integer (boolean)     |
+|  mailed_check          |  payment type is or was check via post *   |  integer (boolean)     |
 |  electronic_check      |  payment type is or was electronic check   |  integer (boolean)     |
 |  bank_transfer         |  payment type is or was bank transfer      |  integer (boolean)     |
 |  credit_card           |  payment type is or was credit card        |  integer (boolean)     |
@@ -85,14 +93,14 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 
 ## IV. Process
 
-This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with [Section V](#v-project-reproduction) of this README; however, it does not serve to limit the process to strict definitions.
+This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with [Section IV](#iv-project-reproduction) of this README; however, it does not serve to limit the process to strict definitions.
 
 #### 1. Project Planning
 🟢 **Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
-- [ ] Describe project goals and product
-- [ ] Set task list for working through pipeline
-- [ ] Create data dictionary to explain data and context
+- [x] Describe project goals and product
+- [x] Set task list for working through pipeline
+- [x] Create data dictionary to explain data and context
 - [ ] State clearly the starting hypothesis
 
 #### 2. Data Acquisition
@@ -161,6 +169,8 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver
   - Explicitly define questions asked during initial analysis
 - [ ] Provide final takeaways, recommend course of action, and next steps
 - [ ] Be prepared to answer questions following presentation
+
+## IV. Modules
 
 ## V. Project Reproduction
 
