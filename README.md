@@ -85,7 +85,7 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 
 ## IV. Process
 
-This section serves as step-by-step project documentation of the data science pipeline- from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with Section V of this README; however, it does not serve to limit the process to strict definitions.
+This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with Section V of this README; however, it does not serve to limit the process to strict definitions.
 
 #### 1. Project Planning
 🟢 **Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
@@ -140,9 +140,9 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ 🟢 **Model & Evaluate** ➜ Deliv
 
 In Jupyter Notebook:
 - [ ] Establish baseline accuracy
-- [ ] Train and fit multiple (3+) models with varying algorithims and/or hyperparametes
+- [ ] Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
 - [ ] Compare evaluation metrics across models
-- [ ] Remove undeeded features
+- [ ] Remove unnecessary features
 - [ ] Evaluate best performing models using validate set
 - [ ] Choose best performing validation model for use on test set
 - [ ] Test final model on out-of-sample testing dataset
@@ -157,7 +157,7 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver
 - [ ] Provide executive summary of findings, key takeaways, and recommendations
 - [ ] Create walkthrough of analysis 
   - Visualize relationships
-  - Dcoument takeaways
+  - Document takeaways
   - Explicitly define questions asked during initial analysis
 - [ ] Provide final takeaways, recommend course of action, and next steps
 - [ ] Be prepared to answer questions following presentation
