@@ -4,25 +4,27 @@ import pandas as pd
 import numpy as np
 
 from acquire import get_data
-from prepare import impute_mean
+from prepare import encode, impute_mean, split_df
 
 
 #################### Explore telco_churn Data ####################
 
 
-# set list of columns for base DataFrame with all data
+# assign list of all columns for DataFrame
 cols = [
-
     # customer demographics
-    'gender',
+    'is_female',
     'is_senior',
     'has_partner',
     'has_dependent',
-
-    # service types
-    'phone_service_type',
-    'internet_service_type',
-
+    # phone service status
+    'has_phone',
+    'one_line',
+    'multiple_lines',
+    # internet service status
+    'has_internet',
+    'dsl',
+    'fiber',
     # internet options
     'streaming_tv',
     'streaming_movies',
@@ -30,72 +32,22 @@ cols = [
     'online_backup',
     'device_protection',
     'tech_support',
-
     # service charges
     'monthly_charges',
     'total_charges',
-
     # payment information
-    'payment_type',
+    'mailed_check',
+    'electronic_check',
+    'bank_transfer',
+    'credit_card',
     'paperless_billing',
     'autopay',
-
     # subscription information
-    'contract_type',
-    'tenure',
-    'churn'
-
+    'no_contract',
+    'one_year_contract',
+    'two_year_contract',
+    'tenure'
 ]
-
-
-def encode(df):
-    '''
-
-    Set yes/no columns to hold boolean values
-
-    Used in conjunction with explore_df function
-
-    '''
-
-    # assign boolean values to yes/no columns
-    df['has_partner'] = np.where(df.partner == 'Yes', 1, 0)
-    df['has_dependent'] = np.where(df.dependents == 'Yes', 1, 0)
-    df['streaming_tv'] = np.where(df.streaming_tv == 'Yes', 1, 0)
-    df['streaming_movies'] = np.where(df.streaming_movies == 'Yes', 1, 0)
-    df['online_security'] = np.where(df.online_security == 'Yes', 1, 0)
-    df['online_backup'] = np.where(df.online_backup == 'Yes', 1, 0)
-    df['device_protection'] = np.where(df.device_protection == 'Yes', 1, 0)
-    df['tech_support'] = np.where(df.tech_support == 'Yes', 1, 0)
-    df['paperless_billing'] = np.where(df.paperless_billing == 1, 0, 1)
-    df['autopay'] = np.where(df.payment_type.str.contains('auto') == True, 1, 0)
-    df['churn'] = np.where(df.churn == 'Yes', 1, 0)
-
-    return df
-
-
-def rename_cols(df):
-    '''
-
-    Rename columns for appropriate data context and clarity of data
-    contained in columns
-
-    Used in conjunction with explore_df function
-
-    '''
-
-    # rename columns to match data context
-    df = df.rename(columns={'senior_citizen':'is_senior',
-        'multiple_lines':'phone_service_type'})
-
-    # rename values for service types for clarity
-    df['phone_service_type'] = df.phone_service_type.replace(
-        ['Yes', 'No', 'No phone service'],
-        ['Multiple Lines', 'Single Line', 'None'])
-    df['internet_service_type'] = df.internet_service_type.replace(
-        ['Fiber optic'], ['Fiber'])
-
-    return df
-
 
 def explore_df(columns=cols, cache=False):
     '''
@@ -115,10 +67,20 @@ def explore_df(columns=cols, cache=False):
     # fill missing values in total_charges
     df = impute_mean(df)
     # set boolean values for true/false columns
+    df['one_line'] = np.where(df.multiple_lines == 'No', 1, 0)
+    df['dsl'] = np.where(df.internet_service_type_id == 1, 1, 0)
+    df['mailed_check'] = np.where(df.payment_type_id == 2, 1, 0)
+    df['no_contract'] = np.where(df.contract_type_id == 1, 1, 0)
     df = encode(df)
-    # rename columns
-    df = rename_cols(df)
     # set desired or default DataFrame columns
-    df = df[columns]
+    df = pd.concat((df[columns], df['churn']), axis=1)
+    # obtain training dataset for exploration
+    subset, _, _, = split_df(df)
 
-    return df
+    print(f'''
+        Source DataFrame Shape            {df.shape[0]} x {df.shape[1]}
+        Subset DataFrame Shape            {subset.shape[0]} x {subset.shape[1]}
+          Data Percentage Used            {subset.shape[0] / df.shape[0]:.2%}
+        ''')
+
+    return subset

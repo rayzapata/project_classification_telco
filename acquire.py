@@ -11,10 +11,12 @@ from env import db_connect
 def new_data():
     '''
 
-    Uses login credentials and db_connect function from env.py to query Codeup
-    database servers for all data contained in telco_churn database tables
+    Uses login credentials and db_connect function from env.py to query
+    Codeup database servers for all data contained in telco_churn
+    database tables
 
-    To be used in conjunction with get_data function defined in acquire.py
+    To be used in conjunction with get_data function defined in
+    acquire.py
 
     '''
 
@@ -41,7 +43,8 @@ def get_data(cache=False):
     Used in conjunction with db_connect function defined in env.py
     and new_data function defined in acquire.py
 
-    cache=False default behavior, set to true to force write new CSV file
+    cache=False default behavior, set to true to force write new CSV
+    file
 
     '''
 

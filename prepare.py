@@ -12,9 +12,8 @@ from acquire import get_data
 #################### Prep telco_churn Data ####################
 
 
-# set list of columns for base DataFrame with all data
+# assign list of all columns for DataFrame
 cols = [
-
     # customer demographics
     'is_female',
     'is_senior',
@@ -37,16 +36,17 @@ cols = [
     'monthly_charges',
     'total_charges',
     # payment information
+    'mailed_check',
     'electronic_check',
     'bank_transfer',
     'credit_card',
     'paperless_billing',
     'autopay',
     # subscription information
+    'no_contract',
     'one_year_contract',
     'two_year_contract',
-    'tenure',
-    'churn'
+    'tenure'
 ]
 
 
@@ -73,12 +73,12 @@ def encode(df):
     df['online_backup'] = np.where(df.online_backup == 'Yes', 1, 0)
     df['device_protection'] = np.where(df.device_protection == 'Yes', 1, 0)
     df['tech_support'] = np.where(df.tech_support == 'Yes', 1, 0)
-    df['one_year_contract'] = np.where(df.contract_type_id == 1, 0, 1)
-    df['two_year_contract'] = np.where(df.contract_type_id == 3, 0, 1)
+    df['one_year_contract'] = np.where(df.contract_type_id == 2, 1, 0)
+    df['two_year_contract'] = np.where(df.contract_type_id == 3, 1, 0)
     df['electronic_check'] = np.where(df.payment_type_id == 1, 1, 0)
     df['bank_transfer'] = np.where(df.payment_type_id == 3, 1, 0)
     df['credit_card'] = np.where(df.payment_type_id == 4, 1, 0)
-    df['paperless_billing'] = np.where(df.paperless_billing == 1, 0, 1)
+    df['paperless_billing'] = np.where(df.paperless_billing == 'Yes', 1, 0)
     df['autopay'] = np.where(df.payment_type.str.contains('auto') == True, 1, 0)
     df['churn'] = np.where(df.churn == 'Yes', 1, 0)
 
@@ -117,13 +117,16 @@ def split_df(df):
     Splits DataFrame into train, validate, and test DataFrames for 
     model creation and validation
 
+    Uses approximately 60% of data for training, 15% to validate, and
+    25% for an adequate size test dataset
+
     Used in conjunction with prep_df function
     '''
 
     # split data into train, validate, and test DataFrames
-    train_validate, test = train_test_split(df, test_size=0.2,
+    train_validate, test = train_test_split(df, test_size=0.25,
         random_state=19, stratify=df.churn)
-    train, validate = train_test_split(train_validate, test_size=0.3,
+    train, validate = train_test_split(train_validate, test_size=0.2,
         random_state=19, stratify=train_validate.churn)
 
     return train, validate, test
@@ -188,7 +191,7 @@ def prep_df(columns=cols, cache=False):
     # encode values to binary columns
     df = encode(df)
     # set desire or default DataFrame columns
-    df = df[columns]
+    df = pd.concat((df[columns], df['churn']), axis=1)
     # split data into three sets for train, validate, test
     train, validate, test = split_df(df)
     # separate train, validate, test into X_variable DataFrames
