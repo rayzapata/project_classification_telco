@@ -98,9 +98,9 @@ This section serves as step-by-step project documentation of the data science pi
 #### 1. Project Planning
 🟢 **Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
-- [x] Describe project goals and product
-- [x] Set task list for working through pipeline
-- [x] Create data dictionary to explain data and context
+- [ ] Describe project goals and product
+- [ ] Set task list for working through pipeline
+- [ ] Create data dictionary to explain data and context
 - [ ] State clearly the starting hypothesis
 
 #### 2. Data Acquisition
@@ -171,6 +171,32 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver
 - [ ] Be prepared to answer questions following presentation
 
 ## IV. Modules
+
+Below are links to the raw format of the `.py` modules created for and used in this project. They are described in generalize terms here; however, read docstrings and comments to ensure correct usage.
+
+- [`acquire.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/acquire.py)
+  - Contains functions to acquire data from the Codeup `telco_churn` database server
+  - Utilizes `eny.py` to hold connection function and secure credentials (!DO NOT UPLOAD!)
+- [`prepare.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/prepare.py)
+  - Prepares the data acquired from the SQL database server
+  - Allows for removal of redundant variables
+  - Fills missing values with minimal effect to dataset
+  - Separates data into several DataFrames for purpose of training, validating, and testing models
+- [`explore.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/explore.py)
+  - Contains functions to explore the prepared DataFrame
+  - Reads in `train` dataset output by `prepare.py` module to new DataFrame
+  - Allows for removal of redundant variables
+- [`visualize.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/visualize.py)
+  - Contains functions for the purpose of graphically and textually visualizing data
+  - Read docstrings for instructions on appropriate use
+- [`measure.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/measure.py)
+  - Contains functions to output statistical tests and metric performance of models
+  - Read docstrings to ensure appropriate results
+- [`model.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/model.py)
+  - Contains functions to create models using `telco_churn` database
+  - Allows for specific selection of retained variables for feature usage
+  - Allows adjustment of hyperparameters for desired effect
+  - Read docstrings to ensure appropriate results
 
 ## V. Project Reproduction
 

@@ -5,7 +5,7 @@ from os.path import isfile
 from env import db_connect
 
 
-############### Acquire telco_churn Data ####################
+#################### Acquire telco_churn Data ####################
 
 
 def new_data():
@@ -58,4 +58,3 @@ def get_data(cache=False):
         df = df = pd.read_csv('telco_churn.csv')
 
     return df
-

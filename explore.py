@@ -44,12 +44,11 @@ cols = [
     'autopay',
     # subscription information
     'no_contract',
-    'one_year_contract',
-    'two_year_contract',
     'tenure'
 ]
 
-def explore_df(columns=cols, cache=False):
+
+def explore_data(columns=cols, cache=False):
     '''
 
     Create a basic DataFrame for purposes of exploration
@@ -78,9 +77,12 @@ def explore_df(columns=cols, cache=False):
     subset, _, _, = split_df(df)
 
     print(f'''
-        Source DataFrame Shape            {df.shape[0]} x {df.shape[1]}
-        Subset DataFrame Shape            {subset.shape[0]} x {subset.shape[1]}
-          Data Percentage Used            {subset.shape[0] / df.shape[0]:.2%}
+             Data Processing Complete
+    +----------------------------------------+
+    |   Source DataFrame Shape : {df.shape[0]} x {df.shape[1]:<5}|
+    |   Subset DataFrame Shape : {subset.shape[0]} x {subset.shape[1]:<5}|
+    |     Data Percentage Used : {subset.shape[0] / df.shape[0]:<12.2%}|
+    +----------------------------------------+   
         ''')
 
     return subset

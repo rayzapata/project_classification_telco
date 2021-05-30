@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from acquire import get_data
 
 
-#################### Prep telco_churn Data ####################
+#################### Prepare telco_churn Data ####################
 
 
 # assign list of all columns for DataFrame
@@ -44,8 +44,6 @@ cols = [
     'autopay',
     # subscription information
     'no_contract',
-    'one_year_contract',
-    'two_year_contract',
     'tenure'
 ]
 
@@ -73,8 +71,7 @@ def encode(df):
     df['online_backup'] = np.where(df.online_backup == 'Yes', 1, 0)
     df['device_protection'] = np.where(df.device_protection == 'Yes', 1, 0)
     df['tech_support'] = np.where(df.tech_support == 'Yes', 1, 0)
-    df['one_year_contract'] = np.where(df.contract_type_id == 2, 1, 0)
-    df['two_year_contract'] = np.where(df.contract_type_id == 3, 1, 0)
+    df['no_contract'] = np.where(df.contract_type_id == 1, 1, 0)
     df['electronic_check'] = np.where(df.payment_type_id == 1, 1, 0)
     df['bank_transfer'] = np.where(df.payment_type_id == 3, 1, 0)
     df['credit_card'] = np.where(df.payment_type_id == 4, 1, 0)
@@ -166,7 +163,7 @@ def separate_y(train, validate, test):
     return y_train, y_validate, y_test
 
 
-def prep_df(columns=cols, cache=False):
+def prep_data(columns=cols, cache=False):
     '''
 
     Creates three each of pandas DataFrames and series from the
