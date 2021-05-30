@@ -3,6 +3,7 @@ Customer Churn at Telco Inc.
 ===
 
 ## Table of Conents
+---
 
 * [I. Project Overview](#1-project-overview)<br>
 [1. Goals](#1-goals)<br>
