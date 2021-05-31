@@ -27,7 +27,6 @@ def new_data():
     JOIN contract_types USING(contract_type_id)
     JOIN internet_service_types USING(internet_service_type_id)
     JOIN payment_types USING(payment_type_id);'''
-
     # Use pandas to read into DataFrame
     df = pd.read_sql(query, db_connect('telco_churn'))
 
@@ -53,7 +52,6 @@ def get_data(cache=False):
         # read in new data into DataFrame and output to CSV file
         df = new_data()
         df.to_csv('telco_churn.csv')
-
     else:
         df = df = pd.read_csv('telco_churn.csv')
 

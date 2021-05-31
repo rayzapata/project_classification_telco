@@ -78,7 +78,6 @@ def encode(df):
     df['paperless_billing'] = np.where(df.paperless_billing == 'Yes', 1, 0)
     df['autopay'] = np.where(df.payment_type.str.contains('auto') == True, 1, 0)
     df['churn'] = np.where(df.churn == 'Yes', 1, 0)
-
     # rename senior_citizen for clarity of value context
     df = df.rename(columns={'senior_citizen':'is_senior'})
 
@@ -97,10 +96,8 @@ def impute_mean(df):
 
     # set options to output on two decimal places
     pd.options.display.float_format = '{:.2f}'.format
-
     # replace whitespace strings with NaNs
     df['total_charges'] = df.total_charges.replace(' ', np.nan)
-
     # use SimpleImputer to fill empty values with mean of total_charges
     imp_mean = SimpleImputer(strategy='mean')
     df[['total_charges']] = imp_mean.fit_transform(df[['total_charges']])

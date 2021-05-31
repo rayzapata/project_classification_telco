@@ -23,16 +23,13 @@ def big_heat(df):
     n_vars = len(df.columns.to_list())
     # Set up large figure size for easy legibility
     plt.figure(figsize=(n_vars + 5, n_vars + 1))
-
     # assign pd.corr() output to variable and create a mask to remove
     # redundancy from graphic
     corr = df.corr()
     mask = np.triu(corr, k=0)
-
     # define custom cmap for heatmap where the darker the reds the more
     # positive and vice versa for blues
     cmap = sns.diverging_palette(h_neg=220, h_pos=13, sep=25, as_cmap=True)
-
     # create graphic with zero centered cmap and annotations set to one
     # significant figure
     sns.heatmap(corr, cmap=cmap, center=0, annot=True, fmt=".1g", square=True,
@@ -42,10 +39,8 @@ def big_heat(df):
                                      'use_gridspec':False,
                                      'anchor':(-0.75,0.75)
                                       })
-
     # format xticks for improved legibility and clarity
     plt.xticks(ha='right', va='top', rotation=35, rotation_mode='anchor')
-
     plt.title('Correlation Heatmap of Selected Variables')
     plt.show()
 
@@ -63,21 +58,16 @@ def heater(df):
 
     # define variable for corr matrix
     heat_churn = df.corr()['churn'][:-1]
-
     # set figure size
     fig, ax = plt.subplots(figsize=(30, 1))
-
     # define cmap for chosen color palette
     cmap = sns.diverging_palette(h_neg=220, h_pos=13, sep=25, as_cmap=True)
-
     # plot matrix turned to DataFrame
     sns.heatmap(heat_churn.to_frame().T, cmap=cmap, center=0,
                 annot=True, fmt=".1g", cbar=False, square=True)
-
     #  improve readability of xticks, remove churn ytick
     plt.xticks(ha='right', va='top', rotation=35, rotation_mode='anchor')
     plt.yticks(ticks=[])
-
     # set title and print graphic
     plt.title('Correlation to Churn\n')
     plt.show()
@@ -97,10 +87,8 @@ def hist_vars(df):
     n_cols = 4
     n_rows = ceil(len(df.columns[:-1].to_list()) / n_cols)
     n_plot = 0
-
     # set figure size based on number of plots
     plt.figure(figsize=((n_cols * 7), (n_rows * 6)))
-
     # loop for each column in DataFrame to create histplot
     for col in df.columns[:-1]:
         n_plot = n_plot + 1
@@ -111,7 +99,6 @@ def hist_vars(df):
         else:
             sns.histplot(data=df, x=df[col], hue=df.churn)
         plt.legend(['Churn', ' Retain'], bbox_to_anchor=(.7,1))
-
     plt.show()
 
 

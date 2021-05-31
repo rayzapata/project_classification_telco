@@ -19,7 +19,7 @@ Table of Conents
 [4. Data Exploration](#4-data-exploration)<br>
 [5. Modeling & Evaluation](#5-modeling--evaluation)<br>
 [6. Product Delivery](#6-product-delivery)<br>
-- IV. [Modules](#iv-modules-)<br>
+- IV. [Modules](#iv-modules)<br>
 * V. [Project Reproduction](#v-project-reproduction)<br>
 
 ---
@@ -82,13 +82,11 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 |  credit_card           |  payment type is or was credit card        |  integer (boolean)     |
 |  paperless_billing     |  customer bill is or was paperless         |  integer (boolean)     |
 |  autopay               |  customer payment is or was automatic      |  integer (boolean)     |
-|  no_contract           |  customer has or had month-to-month term   |  integer (boolean)     |
-|  one_year_contract     |  customer has or had one year service term |  integer (boolean)     |
-|  two_year_contract     |  customer has or had two year service term |  integer (boolean)     |
+|  no_contract           |  customer is not or was not under contract |  integer (boolean)     |
 |  monthly_charges       |  current monthly charges in USD            |  float                 |
 |  total_charges         |  sum of all charges for tenure in USD      |  float                 |
 |  tenure                |  length of customer service in months      |  integer               |
-|  churn (target)        |  customer services are terminated          |  integer (boolean)     |
+|  churn (target)        |  customer services have been cancelled     |  integer (boolean)     |
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Feature was only used in exploration DataFrames
 
@@ -173,7 +171,7 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver
 
 ## IV. Modules
 
-Below are links to the raw format of the `.py` modules created for and used in this project. They are described in generalize terms here; however, read docstrings and comments to ensure correct usage.
+Below are links to the raw format of the `.py` modules created for and used in this project. They are described in generalize terms here; however, read docstrings and comments to ensure correct usage. Where applicable, set `random_state=19` to reproduce results found in this project.
 
 - [`acquire.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/acquire.py)
   - Contains functions to acquire data from the Codeup `telco_churn` database server
