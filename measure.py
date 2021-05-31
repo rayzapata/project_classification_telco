@@ -1,14 +1,14 @@
 #Z0096
 
 import pandas as pd
-import scipy.stats as stats
+from scipy.stats import ttest_ind, chi2_contingency
 from sklearn.metrics import confusion_matrix, classification_report
 
 
 #################### Measure telco_churn Data ####################
 
 
-def two_sample_ttest(a, b, alpha, null_hyp, equal_var=True,
+def two_sample_ttest(a, b, null_hyp, alpha=0.05, equal_var=True,
                         alternative='two-sided'):
     '''
 
@@ -17,12 +17,11 @@ def two_sample_ttest(a, b, alpha, null_hyp, equal_var=True,
 
     '''
 
-    t, p = stats.ttest_ind(a, b, equal_var=equal_var, alternative=alternative)
-    # print alpha, p-value, and t-value
+    t, p = ttest_ind(a, b, equal_var=equal_var, alternative=alternative)
+    # print alpha and p-value
     print(f'''
   alpha: {alpha}
-p-value: {p:.1g}
-t-value: {t:.1g}''')
+p-value: {p:.1g}''')
     # print if our p-value is less than our significance level
     if p < alpha:
         print(f'''
@@ -35,6 +34,52 @@ t-value: {t:.1g}''')
         Due to our p-value of {p:.1g} being less than our significance level of {alpha}, we fail to reject the null hypothesis
         that {null_hyp}.    
         ''')
+
+
+def chi_test(cat, target, alpha=0.05):
+    '''
+    '''
+
+    # set observed DataFrame with crosstab
+    observed = pd.crosstab(cat, target)
+    a = observed.iloc[0,0]
+    b = observed.iloc[0,1]
+    c = observed.iloc[1,0]
+    d = observed.iloc[1,1]
+    # assign returned values from chi2_contigency
+    chi2, p, degf, expected = chi2_contingency(observed)
+    # set expected DataFrame from returned array
+    expected = pd.DataFrame(expected)
+    a2 = expected.iloc[0,0]
+    b2 = expected.iloc[0,1]
+    c2 = expected.iloc[1,0]
+    d2 = expected.iloc[1,1]
+    # set null hypothesis
+    null_hyp = f'{target.name} is independent of {cat.name}'
+    # print alpha and p-value
+    print(f'''
+  alpha: {alpha}
+p-value: {p:.1g}''')
+    # print if our p-value is less than our significance level
+    if p < alpha:
+        print(f'''
+        Due to our p-value of {p:.1g} being less than our significance level of {alpha}, we must reject the null hypothesis
+        that {null_hyp}.''')
+    # print if our p-value is greater than our significance level
+    else:
+        print(f'''
+        Due to our p-value of {p:.1g} being less than our significance level of {alpha}, we fail to reject the null hypothesis
+        that {null_hyp}.''')
+    # print observed and expected DataFrames side by side
+    print(f'''
+                       ** Observed **                        |       ** Expected **
+                       --------------------------------------|--------------------------------------
+                                     No Churn    Churn       |                     No Churn    Churn
+                                                             |       
+                       No Fiber      {a:<10.0f}  {b:<10.0f}  |       No Fiber      {a2:<10.0f}  {b2:<10.0f}
+                                                             |       
+                          Fiber      {c:<10.0f}  {d:<10.0f}  |          Fiber      {c2:<10.0f}  {d2:<10.0f}
+    ''')
 
 
 def cmatrix(y_true, y_pred):
