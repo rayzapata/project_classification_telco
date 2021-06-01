@@ -36,8 +36,9 @@ def new_data():
 def get_data(cache=False):
     '''
 
-    Obtains data from telco_churn database on Codeup server and ensure
-    CSV cached version is stored for offline and quicker access
+    Obtains data from telco_churn database on Codeup server and checks
+    if CSV cached version is stored for offline and quicker access, if
+    not it creates one then reads into DataFrame
 
     Used in conjunction with db_connect function defined in env.py
     and new_data function defined in acquire.py
