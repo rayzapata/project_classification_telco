@@ -5,10 +5,10 @@ Customer Churn at Codeup-Telco Inc.
 Table of Contents
 ---
 
-* [I. Project Overview](#i-project-overview)<br>
+* I. [Project Overview](#i-project-overview)<br>
 [1. Goals](#1-goals)<br>
 [2. Deliverables](#2-deliverables)<br>
-[3. Summary](#3-summary)<br>
+[3. Summary](#3-project-summary)<br>
 * II. [Data Context](#ii-data-context)<br>
 [1. Database Relationship Map](#1-database-relationship)<br>
 [2. Data Dictionary](#2-data-dictionary)<br>
@@ -205,4 +205,4 @@ Below are links to the raw format of the `.py` modules created for and used in t
 
 ## V. Project Reproduction
 
-To best recreate this project, it is best to start with reading this README fully and understanding the process in [Section III](https://github.com/ray-zapata/project_classification_telco#iii-process), detailing each step of the data science pipeline. Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
+To best recreate this project, it is best to start with reading this README fully and understanding the process in [Section III](https://github.com/ray-zapata/project_classification_telco#iii-process), detailing each step of the data science pipeline. In order to make use of the automation in these function, you will need to create `env.py` to house a function called ``Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
