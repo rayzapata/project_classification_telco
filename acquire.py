@@ -53,7 +53,9 @@ def get_data(cache=False):
         # read in new data into DataFrame and output to CSV file
         df = new_data()
         df.to_csv('telco_churn.csv')
+        df.drop_duplicates()
     else:
-        df = df = pd.read_csv('telco_churn.csv')
+        df = pd.read_csv('telco_churn.csv')
+        df.drop_duplicates()
 
     return df

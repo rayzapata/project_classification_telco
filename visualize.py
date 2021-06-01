@@ -41,7 +41,7 @@ def big_heat(df):
                                       })
     # format xticks for improved legibility and clarity
     plt.xticks(ha='right', va='top', rotation=35, rotation_mode='anchor')
-    plt.title('Correlation Heatmap of Selected Variables')
+    plt.title('Correlation Heatmap')
     plt.show()
 
 
@@ -96,8 +96,12 @@ def hist_vars(df):
         if len(df[col].value_counts()) == 2:
             sns.histplot(data=df, x=df[col], hue=df.churn)
             plt.xticks(ticks=[0,1], labels=[False, True])
+            plt.xlabel(' ')
+            plt.title(col)
         else:
             sns.histplot(data=df, x=df[col], hue=df.churn)
+            plt.xlabel(' ')
+            plt.title(col)
         plt.legend(['Churn', ' Retain'], bbox_to_anchor=(.7,1))
     plt.suptitle('Distribution of Variables')
     plt.show()

@@ -193,8 +193,8 @@ def model_report(y_true, y_pred):
             *** Model  Report ***  
             ---------------------              
  _____________________________________________
-|            Positive Case: Churn  (1)        |
-|            Negative Case: Retain (0)        |
+|            Positive Case: churn==1          |
+|            Negative Case: churn==0          |
 |---------------------------------------------|
 |                 Accuracy: {report_dict['accuracy']:>8.2%}          |
 |       True Positive Rate: {cmatrix_dict['tpr']:>8.2%}          |
@@ -212,7 +212,36 @@ def model_report(y_true, y_pred):
 ''')
 
 
-def validate(X, y, model):
+def model_report_lite(y_true, y_pred):
+    '''
+
+    Takes in true and predicted values to create classificant report
+    dictionary and uses cmatrix function to obtain positive and
+    negative prediction rates, prints out table containing all metrics
+    for the positive class of target
+
+    '''
+
+    # create dictionary for classification report and confusion matrix
+    report_dict = classification_report(y_true, y_pred, output_dict=True)
+    cmatrix_dict = cmatrix(y_true, y_pred)
+    # print formatted table with desired information for model report
+    print(f'''
+            *** Model  Report ***  
+            ---------------------              
+ _____________________________________________
+|            Positive Case: churn==1          |
+|            Negative Case: churn==0          |
+|---------------------------------------------|
+|                 Accuracy: {report_dict['accuracy']:>8.2%}          |
+|                Precision: {report_dict['1']['precision']:>8.2%}          |
+|                   Recall: {report_dict['1']['recall']:>8.2%}          |
+|            Total Support: {report_dict['macro avg']['support']:>8}          |
+|_____________________________________________|
+''')
+
+
+def validate(X, y, model, lite=False):
     '''
 
     Takes in feature DataFrame, true target, and fitted model to obtain
@@ -224,8 +253,12 @@ def validate(X, y, model):
 
     # assign model predictions on validate data
     y_pred = model.predict(X)
-    # print model metrics on validate data
-    model_report(y, y_pred)
+    if lite == False:
+        # print model metrics
+        model_report(y, y_pred)
+    elif lite == True:
+        # print basic model metrics
+        model_report_lite(y, y_pred)
 
     return y_pred
 

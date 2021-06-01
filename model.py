@@ -1,6 +1,6 @@
 #Z0096
 
-from measure import model_report
+from measure import model_report, model_report_lite
 
 from sklearn.dummy import DummyClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -34,7 +34,7 @@ def baseline_model(X, y, strategy='most_frequent', random_state=19):
     return baseline, y_baseline
 
 
-def tree_model(X, y, 
+def tree_model(X, y, lite=False,
                criterion='gini',
                splitter='best',
                max_depth=None,
@@ -74,13 +74,17 @@ def tree_model(X, y,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    # print model metrics
-    model_report(y, y_pred)
+    if lite == False:
+        # print model metrics
+        model_report(y, y_pred)
+    elif lite == True:
+        # print basic model metrics
+        model_report_lite(y, y_pred)
 
     return model, y_pred
 
 
-def forest_model(X, y,
+def forest_model(X, y, lite=False,
                  n_estimators=100,
                  criterion='gini',
                  max_depth=None,
@@ -132,13 +136,17 @@ def forest_model(X, y,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    # print model metrics
-    model_report(y, y_pred)
+    if lite == False:
+        # print model metrics
+        model_report(y, y_pred)
+    elif lite == True:
+        # print basic model metrics
+        model_report_lite(y, y_pred)
 
     return model, y_pred
 
 
-def knn_model(X, y,
+def knn_model(X, y, lite=False,
               n_neighbors=5,
               weights='uniform',
               algorithm='auto',
@@ -168,13 +176,17 @@ def knn_model(X, y,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    # print model metrics
-    model_report(y, y_pred)
+    if lite == False:
+        # print model metrics
+        model_report(y, y_pred)
+    elif lite == True:
+        # print basic model metrics
+        model_report_lite(y, y_pred)
 
     return model, y_pred
 
 
-def logit_model(X, y,
+def logit_model(X, y, lite=False,
               penalty='l2',
               dual=False,
               tol=0.0001,
@@ -218,7 +230,11 @@ def logit_model(X, y,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    # print model metrics
-    model_report(y, y_pred)
+    if lite == False:
+        # print model metrics
+        model_report(y, y_pred)
+    elif lite == True:
+        # print basic model metrics
+        model_report_lite(y, y_pred)
 
     return model, y_pred

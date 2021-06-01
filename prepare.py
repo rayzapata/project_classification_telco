@@ -6,6 +6,7 @@ from os.path import isfile
 
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 from acquire import get_data
 
