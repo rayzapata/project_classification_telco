@@ -174,7 +174,7 @@ Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver
 
 ## IV. Modules
 
-Below are links to the raw format of the `.py` modules created for and used in this project. They are described in generalize terms here; however, read docstrings and comments to ensure correct usage. Where applicable, set `random_state=19` to reproduce results found in this project.
+Below are links to the raw format of the `.py` modules created for and used in this project. They are described in generalized terms here; however, read docstrings and comments to ensure correct usage. Where applicable, set `random_state=19` to reproduce results found in this project.
 
 - [`acquire.py`](https://raw.githubusercontent.com/ray-zapata/project_classification_telco/main/acquire.py)
   - Contains functions to acquire data from the Codeup `telco_churn` database server
