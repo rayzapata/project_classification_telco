@@ -96,7 +96,7 @@ Following acquisition and preparation of the initial SQL database, the DataFrame
 
 ## III. Process
 
-This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each check-mark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with [Section IV](#iv-project-reproduction) of this README; however, it does not serve to limit the process to strict definitions.
+This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each check-mark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with [Section IV](#iv-project-reproduction); however, it does not serve to limit the process to strict definitions.
 
 #### 1. Project Planning
 🟢 **Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
@@ -203,5 +203,4 @@ Below are links to the raw format of the `.py` modules created for and used in t
 
 ## V. Project Reproduction
 
-To best recreate this project, it is best to start with reading this README fully and understanding the process in Section III, detailing each step of the data science pipeline. Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
-
+To best recreate this project, it is best to start with reading this README fully and understanding the process in [Section III](https://github.com/ray-zapata/project_classification_telco#iii-process), detailing each step of the data science pipeline. Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
