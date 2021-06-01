@@ -32,8 +32,9 @@ This project holds the intent of predicting and reducing churn at Codeup-Telco I
 
 #### 2. Deliverables
 
-- Jupyter Notebook Report which contains the process of exploring, modeling, and testing:
-  - [`churn_report.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/churn_report.ipynb)
+- Jupyter Notebooks containing the process of exploring, modeling, and testing:
+  + [`exploration.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/exploration.ipynb)
+  + [`modeling.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/modeling.ipynb)
 - This README which contains:
   + Project goals, findings, and takeaways
   + Data context
@@ -42,6 +43,7 @@ This project holds the intent of predicting and reducing churn at Codeup-Telco I
 - CSV with `customer_id`, `probability_of_churn`, and `prediction_of_churn`
 - Modules as `.py` files containing functions to acquire and prepare data
 - Jupyter Notebook Presentation with high-level overview of project
+  + [`churn_report.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/churn_report.ipynb)
 
 #### 3. Project Summary
 
