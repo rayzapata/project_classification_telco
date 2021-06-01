@@ -1,6 +1,6 @@
 #Z0096
 
-from measure import model_report, model_report_lite
+from measure import model_report
 
 from sklearn.dummy import DummyClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -74,12 +74,7 @@ def tree_model(X, y, lite=False,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    if lite == False:
-        # print model metrics
-        model_report(y, y_pred)
-    elif lite == True:
-        # print basic model metrics
-        model_report_lite(y, y_pred)
+    model_report(y, y_pred, lite=lite)
 
     return model, y_pred
 
@@ -136,12 +131,7 @@ def forest_model(X, y, lite=False,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    if lite == False:
-        # print model metrics
-        model_report(y, y_pred)
-    elif lite == True:
-        # print basic model metrics
-        model_report_lite(y, y_pred)
+    model_report(y, y_pred, lite=lite)
 
     return model, y_pred
 
@@ -176,12 +166,7 @@ def knn_model(X, y, lite=False,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    if lite == False:
-        # print model metrics
-        model_report(y, y_pred)
-    elif lite == True:
-        # print basic model metrics
-        model_report_lite(y, y_pred)
+    model_report(y, y_pred, lite=lite)
 
     return model, y_pred
 
@@ -230,11 +215,6 @@ def logit_model(X, y, lite=False,
     model.fit(X, y)
     # assign model predictions
     y_pred = model.predict(X)
-    if lite == False:
-        # print model metrics
-        model_report(y, y_pred)
-    elif lite == True:
-        # print basic model metrics
-        model_report_lite(y, y_pred)
+    model_report(y, y_pred, lite=lite)
 
     return model, y_pred

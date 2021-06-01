@@ -175,7 +175,7 @@ def cmatrix(y_true, y_pred):
     return cmatrix_dict
 
 
-def model_report(y_true, y_pred):
+def model_report(y_true, y_pred, lite=False):
     '''
 
     Takes in true and predicted values to create classificant report
@@ -189,7 +189,8 @@ def model_report(y_true, y_pred):
     report_dict = classification_report(y_true, y_pred, output_dict=True)
     cmatrix_dict = cmatrix(y_true, y_pred)
     # print formatted table with desired information for model report
-    print(f'''
+    if lite == False:
+        print(f'''
             *** Model  Report ***  
             ---------------------              
  _____________________________________________
@@ -210,23 +211,8 @@ def model_report(y_true, y_pred):
 |            Total Support: {report_dict['macro avg']['support']:>8}          |
 |_____________________________________________|
 ''')
-
-
-def model_report_lite(y_true, y_pred):
-    '''
-
-    Takes in true and predicted values to create classificant report
-    dictionary and uses cmatrix function to obtain positive and
-    negative prediction rates, prints out table containing all metrics
-    for the positive class of target
-
-    '''
-
-    # create dictionary for classification report and confusion matrix
-    report_dict = classification_report(y_true, y_pred, output_dict=True)
-    cmatrix_dict = cmatrix(y_true, y_pred)
-    # print formatted table with desired information for model report
-    print(f'''
+    elif lite == True:
+         print(f'''
             *** Model  Report ***  
             ---------------------              
  _____________________________________________
@@ -253,12 +239,7 @@ def validate(X, y, model, lite=False):
 
     # assign model predictions on validate data
     y_pred = model.predict(X)
-    if lite == False:
-        # print model metrics
-        model_report(y, y_pred)
-    elif lite == True:
-        # print basic model metrics
-        model_report_lite(y, y_pred)
+    model_report(y, y_pred, lite=lite)
 
     return y_pred
 
@@ -276,6 +257,6 @@ def final_test(X, y, model):
     # assign model predictions on test data
     y_pred = model.predict(X)
     # print model metrics on test data
-    model_report(y, y_pred)
+    model_report(y, y_pred, lite=False)
 
     return y_pred
