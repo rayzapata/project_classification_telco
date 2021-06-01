@@ -12,6 +12,7 @@ from prepare import encode, impute_mean, split_df
 
 # assign list of all columns for DataFrame
 cols = [
+
     # customer demographics
     'is_female',
     'is_senior',
@@ -51,7 +52,8 @@ cols = [
 def explore_data(columns=cols, cache=False):
     '''
 
-    Create a basic DataFrame for purposes of exploration
+    Create a basic DataFrame for purposes of exploration, uses same dataset as
+    would be created for model training
 
     columns=cols default behavior, pass list of columns to specify only
     certain columns, otherwise all columns are retained
@@ -86,7 +88,3 @@ def explore_data(columns=cols, cache=False):
         ''')
 
     return subset
-
-def end():
-    print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSee You Space Cowboy...')
-    

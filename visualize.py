@@ -99,11 +99,16 @@ def hist_vars(df):
         else:
             sns.histplot(data=df, x=df[col], hue=df.churn)
         plt.legend(['Churn', ' Retain'], bbox_to_anchor=(.7,1))
+    plt.suptitle('Distribution of Variables')
     plt.show()
 
 
 def internet_violin(df):
     '''
+
+    Creates violinplot figure with two sublots for monthly charges between
+    first year and post year customers with a hue for churn
+    
     '''
 
     first_year = df[df.tenure <= 12]
@@ -147,6 +152,10 @@ def internet_violin(df):
 
 def internet_breakdown(df):
     '''
+
+    Prints report of fiber customers separated into first year and post year,
+    then shows the total number for each who churned along with the percentage
+
     '''
 
     first_year = df[df.tenure <= 12]
@@ -163,45 +172,25 @@ def internet_breakdown(df):
     year_net = first_year_net.shape[0]
     post_year = post_year_net.shape[0]
     
-    year_dsl = first_year_net[first_year_net.dsl == 1].shape[0]
-    year_dsl_churn = first_year_net[(first_year_net.dsl == 1) &
-                                    (first_year_net.churn == 1)].shape[0]
-    
     year_fiber = first_year_net[first_year_net.fiber == 1].shape[0]
     year_fiber_churn = first_year_net[(first_year_net.fiber == 1) &
                                     (first_year_net.churn == 1)].shape[0]
-    
-    post_dsl = post_year_net[post_year_net.dsl == 1].shape[0]
-    post_dsl_churn = post_year_net[(post_year_net.dsl == 1) &
-                                    (post_year_net.churn == 1)].shape[0]
     
     post_fiber = post_year_net[post_year_net.fiber == 1].shape[0]
     post_fiber_churn = post_year_net[(post_year_net.fiber == 1) &
                                     (post_year_net.churn == 1)].shape[0]
     
     print(f'''
-      Total Internet Customers: {net_cust}
-
+         Total Fiber Customers: {year_fiber + post_fiber}
 + ------------------------------------------ +
 |                                            |
-|   First Year Total Customers: {year_net:<13}|
+|   First Year Fiber Customers: {year_fiber:<13}|
 |                                            |
-|                DSL Customers: {year_dsl:<13}|
-|                      Churned: {year_dsl_churn:<13}|
-|                      Percent: {(year_dsl_churn / year_dsl):<13.2%}|
-|                                            |
-|              Fiber Customers: {year_fiber:<13}|
 |                      Churned: {year_fiber_churn:<13}|
 |                      Percent: {(year_fiber_churn / year_fiber):<13.2%}|
 |                                            |
+|    Post Year Fiber Customers: {post_fiber:<13}|
 |                                            |
-|    Post Year Total Customers: {post_year:<13}|
-|                                            |
-|                DSL Customers: {post_dsl:<13}|
-|                      Churned: {post_dsl_churn:<13}|
-|                      Percent: {(post_dsl_churn / post_dsl):<13.2%}|
-|                                            |
-|              Fiber Customers: {post_fiber:<13}|
 |                      Churned: {post_fiber_churn:<13}|
 |                      Percent: {(post_fiber_churn / post_fiber):<13.2%}|
 |                                            |
@@ -211,7 +200,13 @@ def internet_breakdown(df):
 
 def internet_contract_compare(df):
     '''
+
+    Prints report of fiber customers broken down by first year and post year,
+    then ouputs a table with their counts, mean charges, and the percentage of
+    those customers under service contract terms
+    
     '''
+
     first_year = df[(df.fiber == 1) & (df.tenure <=12)]
     post_year = df[(df.fiber == 1) & (df.tenure > 12)]
 

@@ -2,6 +2,7 @@
 
 import pandas as pd
 import numpy as np
+from os.path import isfile
 
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
@@ -14,6 +15,8 @@ from acquire import get_data
 
 # assign list of all columns for DataFrame
 cols = [
+
+    'customer_id',
     # customer demographics
     'is_female',
     'is_senior',
@@ -36,7 +39,6 @@ cols = [
     'monthly_charges',
     'total_charges',
     # payment information
-    'mailed_check',
     'electronic_check',
     'bank_transfer',
     'credit_card',
@@ -118,9 +120,9 @@ def split_df(df):
     '''
 
     # split data into train, validate, and test DataFrames
-    train_validate, test = train_test_split(df, test_size=0.25,
+    train_validate, test = train_test_split(df, test_size=0.2,
         random_state=19, stratify=df.churn)
-    train, validate = train_test_split(train_validate, test_size=0.2,
+    train, validate = train_test_split(train_validate, test_size=0.25,
         random_state=19, stratify=train_validate.churn)
 
     return train, validate, test
@@ -194,3 +196,44 @@ def prep_data(columns=cols, cache=False):
     y_train, y_validate, y_test = separate_y(train, validate, test)
 
     return X_train, y_train, X_validate, y_validate, X_test, y_test
+
+
+def pred_proba(model, X):
+    '''
+
+    Creates a DataFrame containing prediction probability for passed
+    model and returns only the column for positive case churn
+
+    Used in conjunction with get_final_report
+
+    '''
+
+    # convert predict_proba array into DataFrame
+    proba_df = pd.DataFrame(model.predict_proba(X), columns=['retain', 'churn'])
+
+    return proba_df.churn
+
+
+def get_final_report(model, features, cache=False):
+    '''
+
+    Generates a CSV and reads into a DataFrame the passed model
+    predictive probabilities, predicitons, and customer_id
+    
+    '''
+    # check if cached CSV file already exists or if forced cache=true
+    if cache == True or isfile('final_report.csv') == False:
+
+        # read in new data into DataFrame and output to CSV file
+        df = get_data(cache=cache)
+        df = encode(df)
+        df['probability_of_churn'] = pred_proba(model, df[features])
+        df['prediction_of_churn'] = model.predict(df[features])
+        # reduce DataFrame to deliverable product
+        df = df[['customer_id', 'probability_of_churn', 'prediction_of_churn']]
+        df.to_csv('final_report.csv', index=False)
+
+    else:
+        df = pd.read_csv('final_report.csv')
+
+    return df

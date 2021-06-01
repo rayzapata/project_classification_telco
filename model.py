@@ -14,6 +14,10 @@ from sklearn.linear_model import LogisticRegression
 
 def baseline_model(X, y, strategy='most_frequent', random_state=19):
     '''
+
+    Generates a baseline model using sklearn DummyClassifier strategy
+    default set to 'most_frequent' and random_state=19
+
     '''
 
     # assign baseline model and fit to data
@@ -45,6 +49,11 @@ def tree_model(X, y,
                class_weight=None,
                ccp_alpha=0.0):
     '''
+
+    Creates sklearn DecisionTree model with all default hyperparameters
+    and random_state=19, then returns the model fit to dataset and its
+    predictions
+    
     '''
 
     # assign model and fit to data
@@ -92,6 +101,11 @@ def forest_model(X, y,
                  ccp_alpha=0.0,
                  max_samples=None):
     '''
+
+    Creates sklearn RandomForestClassifier model with all default
+    hyperparameters and random_state=19, then returns the model fit to
+    dataset and its predictions
+    
     '''
 
     # assign model and fit to data
@@ -134,6 +148,11 @@ def knn_model(X, y,
               metric_params=None,
               n_jobs=None):
     '''
+
+    Creates sklearn KNeighborsClassifier model with all default
+    hyperparameters, then returns the model fit to dataset and its
+    predictions
+    
     '''
 
     # assign model and fit to data
@@ -172,6 +191,11 @@ def logit_model(X, y,
               n_jobs=None,
               l1_ratio=None):
     '''
+
+    Creates sklearn LogicRegression model with all default
+    hyperparameters and random_state=19, then returns the model fit to
+    dataset and its predictions
+    
     '''
 
     # assign model and fit to data
@@ -198,27 +222,3 @@ def logit_model(X, y,
     model_report(y, y_pred)
 
     return model, y_pred
-
-
-def validate(X, y, model):
-    '''
-    '''
-
-    # assign model predictions on validate data
-    y_pred = model.predict(X)
-    # print model metrics on validate data
-    model_report(y, y_pred)
-
-    return y_pred
-
-
-def final_test(X, y, model):
-    '''
-    '''
-
-    # assign model predictions on test data
-    y_pred = model.predict(X)
-    # print model metrics on test data
-    model_report(y, y_pred)
-
-    return y_pred
