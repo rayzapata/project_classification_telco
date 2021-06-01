@@ -32,7 +32,8 @@ This project holds the intent of predicting and reducing churn at Codeup-Telco I
 
 #### 2. Deliverables
 
-- Jupyter Notebook Report which contains the process of exploring, modeling, and testing
+- Jupyter Notebook Report which contains the process of exploring, modeling, and testing:
+  - [`churn_report.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/churn_report.ipynb)
 - This README which contains:
   + Project goals, findings, and takeaways
   + Data context
@@ -202,5 +203,5 @@ Below are links to the raw format of the `.py` modules created for and used in t
 
 ## V. Project Reproduction
 
-To best recreate this project, it is best to start with reading this README fully and understanding the process in Section III, detailing each step of the data science pipeline. Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
+To best recreate this project, it is best to start with reading this README fully and understanding the process in Section III, detailing each step of the data science pipeline. Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/github/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
 
