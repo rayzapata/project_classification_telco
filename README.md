@@ -45,7 +45,7 @@ This project holds the intent of predicting and reducing churn at Codeup-Telco I
 
 #### 3. Project Summary
 
-Through the processes of acquisition, preparation, and exploration performed using the functions defined in the below modules, we discovered several key factors in predicting churn in our customers. It was discovered that the most strongly correlations with increased churn were with customers on fiber optic service, utilizing electronic checks for payment, service tenure less than one year, and customers on month-to-month terms. 
+Through the processes of acquisition, preparation, and exploration performed using the functions defined in the below modules, we discovered several key factors in predicting churn in our customers. It was discovered that the strongest correlations with increased churn were with customers on fiber optic service, utilizing electronic checks for payment, service tenure less than one year, and customers on month-to-month terms. 
 
 With these variables as our features for model fitting, we were able to create a `LogicalRegression` classifier to predict the likelihood of customer churn. Optimizing the model for recall of the positive class where `churn==1`, we were able to capture nearly 64% of incidence of churn. We then recommended action in the form of customer reach out to high-risk category of customers, and promotional offers and service trials to incentivize customer one-year and two-year term agreements.
 
