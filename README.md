@@ -1,15 +1,15 @@
 
-Customer Churn at Telco Inc.
+Customer Churn at Codeup-Telco Inc.
 ===
 
-Table of Conents
+Table of Contents
 ---
 
-* [I. Project Overview](#1-project-overview)<br>
+* [I. Project Overview](#i-project-overview)<br>
 [1. Goals](#1-goals)<br>
 [2. Deliverables](#2-deliverables)<br>
 [3. Summary](#3-summary)<br>
-- II. [Data Context](#ii-data-context)<br>
+* II. [Data Context](#ii-data-context)<br>
 [1. Database Relationship Map](#1-database-relationship)<br>
 [2. Data Dictionary](#2-data-dictionary)<br>
 * III. [Process](#iii-process)<br>
@@ -19,7 +19,7 @@ Table of Conents
 [4. Data Exploration](#4-data-exploration)<br>
 [5. Modeling & Evaluation](#5-modeling--evaluation)<br>
 [6. Product Delivery](#6-product-delivery)<br>
-- IV. [Modules](#iv-modules)<br>
+* IV. [Modules](#iv-modules)<br>
 * V. [Project Reproduction](#v-project-reproduction)<br>
 
 ---
@@ -28,7 +28,7 @@ Table of Conents
 
 #### 1. Goals
 
-This project holds the intent of predicting and reducing churn at Telco Inc., a telecommunication company that provides telephony and internet services to members of the consumer class. Churn in this context refers to the act of customer services and subscriptions being terminated, also known as attrition or turnover. Our goal is to find drivers of churn in the existing data and use machine learning models to predict further incidence in test samples. From there we will recommend actions to improve customer retention in these areas of high churn.
+This project holds the intent of predicting and reducing churn at Codeup-Telco Inc., a telecommunication company that provides telephony and internet services to members of the consumer class. Churn in this context refers to the act of customer services and subscriptions being terminated, also known as attrition or turnover. Our goal is to find drivers of churn in the existing data and use machine learning models to predict further incidence in test samples. From there we will recommend actions to improve customer retention in these areas of high churn.
 
 #### 2. Deliverables
 
@@ -42,11 +42,13 @@ This project holds the intent of predicting and reducing churn at Telco Inc., a 
 - Modules as `.py` files containing functions to acquire and prepare data
 - Jupyter Notebook Presentation with high-level overview of project
 
-#### 3. Summary
+#### 3. Project Summary
 
-WIP
+Through the processes of acquisition, preparation, and exploration performed using the functions defined in the below modules, we discovered several key factors in predicting churn in our customers. It was discovered that the most strongly correlations with increased churn were with customers on fiber optic service, utilizing electronic checks for payment, service tenure less than one year, and customers on month-to-month terms. 
 
-## III. Data Context
+With these variables as our features for model fitting, we were able to create a `LogicalRegression` classifier to predict the likelihood of customer churn. Optimizing the model for recall of the positive class where `churn==1`, we were able to capture nearly 64% of incidence of churn. We then recommended action in the form of customer reach out to high-risk category of customers, and promotional offers and service trials to incentivize customer one-year and two-year term agreements.
+
+## II. Data Context
 
 #### 1. Database Relationship
 
@@ -58,87 +60,88 @@ The Codeup `telco_churn` SQL database contains four tables: `customers`, `contra
 
 Following acquisition and preparation of the initial SQL database, the DataFrames used in this project contain the following variables. Contained values are defined along with their respective data types.
 
-|  Feature               |  Definition                                |  Data Type             |
-| :--------------------: | :----------------------------------------  | :--------------------: |
+|  Variables             |  Definition                                |  Data Type             |
+| :--------------------: | :----------------------------------------: | :--------------------: |
+|  customer_id           |  unique identifier for each customer       |  object                |
 |  is_female             |  binary gender identity is female          |  integer (boolean)     |
 |  is_senior             |  qualifies as senior citizen (65+)         |  integer (boolean)     |
 |  has_partner           |  has spouse, partner, or significant other |  integer (boolean)     |
 |  has_dependent         |  has dependent(s), children or otherwise   |  integer (boolean)     |
 |  has_phone             |  is or was a phone customer                |  integer (boolean)     |
-|  one_line              |  has or had one phone line *               |  integer (boolean)     |
+|  one_line              |  has or had one phone line                 |  integer (boolean)     |
 |  multiple_lines        |  has or had multiple phone lines           |  integer (boolean)     |
-|  has_internet          |  is or was an internet customer            |  integer (boolean)     |
-|  dsl                   |  is or was a dsl internet customer *       |  integer (boolean)     |
-|  fiber                 |  had or has fiber internet service         |  integer (boolean)     |
-|  streaming_tv          |  internet option: has or had service addon |  integer (boolean)     |
-|  streaming_movies      |  internet option: has or had service addon |  integer (boolean)     |
-|  online_security       |  internet option: has or had service addon |  integer (boolean)     |
-|  online_backup         |  internet option: has or had service addon |  integer (boolean)     |
-|  device_protection     |  internet option: has or had service addon |  integer (boolean)     |
-|  tech_support          |  internet option: has or had service addon |  integer (boolean)     |
-|  mailed_check          |  payment type is or was check via post *   |  integer (boolean)     |
-|  electronic_check      |  payment type is or was electronic check   |  integer (boolean)     |
+|  has_internet *        |  is or was an internet customer            |  integer (boolean)     |
+|  dsl                   |  is or was a dsl internet customer         |  integer (boolean)     |
+|  fiber *               |  had or has fiber internet service         |  integer (boolean)     |
+|  streaming_tv          |  internet option: has or had service add-on|  integer (boolean)     |
+|  streaming_movies      |  internet option: has or had service add-on|  integer (boolean)     |
+|  online_security       |  internet option: has or had service add-on|  integer (boolean)     |
+|  online_backup         |  internet option: has or had service add-on|  integer (boolean)     |
+|  device_protection     |  internet option: has or had service add-on|  integer (boolean)     |
+|  tech_support          |  internet option: has or had service add-on|  integer (boolean)     |
+|  mailed_check          |  payment type is or was check via post     |  integer (boolean)     |
+|  electronic_check *    |  payment type is or was electronic check   |  integer (boolean)     |
 |  bank_transfer         |  payment type is or was bank transfer      |  integer (boolean)     |
 |  credit_card           |  payment type is or was credit card        |  integer (boolean)     |
 |  paperless_billing     |  customer bill is or was paperless         |  integer (boolean)     |
 |  autopay               |  customer payment is or was automatic      |  integer (boolean)     |
-|  no_contract           |  customer is not or was not under contract |  integer (boolean)     |
-|  monthly_charges       |  current monthly charges in USD            |  float                 |
+|  no_contract *         |  customer is not or was not under contract |  integer (boolean)     |
+|  monthly_charges *     |  current monthly charges in USD            |  float                 |
 |  total_charges         |  sum of all charges for tenure in USD      |  float                 |
-|  tenure                |  length of customer service in months      |  integer               |
+|  tenure *              |  length of customer service in months      |  integer               |
 |  churn (target)        |  customer services have been cancelled     |  integer (boolean)     |
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Feature was only used in exploration DataFrames
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Variable was used as feature in predictive models
 
-## IV. Process
+## III. Process
 
-This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each checkmark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with [Section IV](#iv-project-reproduction) of this README; however, it does not serve to limit the process to strict definitions.
+This section serves as step-by-step project documentation of the data science pipeline—from planning stages through final product delivery. Each check-mark indicates a completed step in each sub-process. It may also serve as a guide for project reproduction in conjunction with [Section IV](#iv-project-reproduction) of this README; however, it does not serve to limit the process to strict definitions.
 
 #### 1. Project Planning
 🟢 **Plan** ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
-- [ ] Describe project goals and product
-- [ ] Set task list for working through pipeline
-- [ ] Create data dictionary to explain data and context
-- [ ] State clearly the starting hypothesis
+- [x] Describe project goals and product
+- [x] Set task list for working through pipeline
+- [x] Create data dictionary to explain data and context
+- [x] State clearly the starting hypothesis
 
 #### 2. Data Acquisition
 Plan ➜ 🟢 **Acquire** ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver <br>
 
-- [ ] Create `acquire.py` with:
+- [x] Create `acquire.py` with:
   - Function(s) needed to fetch data into pandas DataFrame
   - Required imports to perform tasks
   - Ensured security of personal credentials
-- [ ] In Jupyter Notebook:
+- [x] In Jupyter Notebook:
   - Import function(s) from `acquire.py` module
-  - Perform data summarization
+  - Perform data summation
   - Plot variable distributions
 
 #### 3. Data Preparation
 Plan ➜ Acquire ➜ 🟢 **Prepare** ➜ Explore ➜ Model & Evaluate ➜ Deliver
 
-- [ ] Create `prepare.py` with function(s) to:
+- [x] Create `prepare.py` with function(s) to:
   - Split data into train, validate, test sets
   - Address missing values
   - Encode variables
   - Create new features if needed
-- [ ] In Jupyter Notebook:
+- [x] In Jupyter Notebook:
   - Import function(s) from `prepare.py` module
   - Explore missing values and document how to address them
-  - Explore dtypes and values to ensure numeric representation
+  - Explore data types and values to ensure numeric representation
   - Create new features for use in modeling
 
 #### 4. Data Exploration
 Plan ➜ Acquire ➜ Prepare ➜ 🟢 **Explore** ➜ Model & Evaluate ➜ Deliver
 
 In Jupyter Notebook:
-- [ ] Answer key questions about hypotheses and find drivers of churn
+- [x] Answer key questions about hypotheses and find drivers of churn
   - Run at least two statistical tests
   - Document findings
-- [ ] Create visualizations with intent to discover variable relationships
+- [x] Create visualizations with intent to discover variable relationships
   - Identify variables related to churn
   - Identify any potential data integrity issues
-- [ ] Summarize conclusions, provide clear answers, and summarize takeaways
+- [x] Summarize conclusions, provide clear answers, and summarize takeaways
   - Explain plan of action as deduced from work to this point
 
 
@@ -146,28 +149,28 @@ In Jupyter Notebook:
 Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ 🟢 **Model & Evaluate** ➜ Deliver
 
 In Jupyter Notebook:
-- [ ] Establish baseline accuracy
-- [ ] Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
-- [ ] Compare evaluation metrics across models
-- [ ] Remove unnecessary features
-- [ ] Evaluate best performing models using validate set
-- [ ] Choose best performing validation model for use on test set
-- [ ] Test final model on out-of-sample testing dataset
+- [x] Establish baseline accuracy
+- [x] Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
+- [x] Compare evaluation metrics across models
+- [x] Remove unnecessary features
+- [x] Evaluate best performing models using validate set
+- [x] Choose best performing validation model for use on test set
+- [x] Test final model on out-of-sample testing dataset
   - Summarize performance
   - Interpret and document findings
 
 #### 6. Product Delivery
 Plan ➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ 🟢 **Deliver**
 
-- [ ] Prepare five minute presentation using Jupyter Notebook
-- [ ] Include introduction of project and goals
-- [ ] Provide executive summary of findings, key takeaways, and recommendations
-- [ ] Create walkthrough of analysis 
+- [x] Prepare five minute presentation using Jupyter Notebook
+- [x] Include introduction of project and goals
+- [x] Provide executive summary of findings, key takeaways, and recommendations
+- [x] Create walk through of analysis 
   - Visualize relationships
   - Document takeaways
   - Explicitly define questions asked during initial analysis
-- [ ] Provide final takeaways, recommend course of action, and next steps
-- [ ] Be prepared to answer questions following presentation
+- [x] Provide final takeaways, recommend course of action, and next steps
+- [x] Be prepared to answer questions following presentation
 
 ## IV. Modules
 
@@ -199,4 +202,5 @@ Below are links to the raw format of the `.py` modules created for and used in t
 
 ## V. Project Reproduction
 
-WIP
+To best recreate this project, it is best to start with reading this README fully and understanding the process in Section III, detailing each step of the data science pipeline. Utilizing the functions in each of this modules will aid in automating the process to acquire the data and create visuals and models. The [`exploration.ipynb`](https://nbviewer.jupyter.org/ray-zapata/project_classification_telco/blob/main/exploration.ipynb) and [`modeling.ipynb`](https://nbviewer.jupyter.org/ray-zapata/project_classification_telco/blob/main/modeling.ipynb) notebooks can further serve as guides on appropriate usage of each function found in the modules, as well as complete reading of the docstrings found therein.
+
