@@ -155,19 +155,11 @@ def cmatrix(y_true, y_pred):
 
     '''
 
-    # define confusion matrix, convert to dataframe
-    cmatrix = confusion_matrix(y_true, y_pred)
-    cmatrix = pd.DataFrame(confusion_matrix(y_true, y_pred),
-                           index=['True Retain', 'True Churn'],
-                           columns=['Predict Retain', 'Predict Churn'])
     # assign TN, FN, TP, FP
-    true_neg = cmatrix.iloc[0, 0]
-    false_neg = cmatrix.iloc[0, 1]
-    true_pos = cmatrix.iloc[1, 0]
-    false_pos = cmatrix.iloc[1, 1]
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
     #do math to find rates
-    tpr = true_pos / (true_pos + false_neg)
-    tnr = true_neg / (true_neg + false_pos)
+    tpr = (tp / (tp + fn))
+    tnr = (tn / (tn + fp))
     fpr = 1 - tnr
     fnr = 1 - tpr
     cmatrix_dict = {'tpr':tpr, 'tnr':tnr, 'fpr':fpr, 'fnr':fnr}
